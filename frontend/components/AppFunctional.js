@@ -94,12 +94,15 @@ export default function AppFunctional(props) {
     console.log("submit");
 
     axios
-      .post("http://localhost:9000/api/result", {
-        x: getXY()[0],
-        y: getXY()[1],
-        steps: steps,
-        email: email,
-      })
+      .post(
+        "https://fs-web-s9-sprint-challenge-solution-7fq3hqqfi.vercel.app/",
+        {
+          x: getXY()[0],
+          y: getXY()[1],
+          steps: steps,
+          email: email,
+        }
+      )
       .then(function (response) {
         console.log(response);
         setMessage(response.data.message);
